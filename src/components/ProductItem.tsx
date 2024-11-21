@@ -1,6 +1,6 @@
 "use client";
 
-import { ShppingIcon, StarIcon } from '@/app/images/icon';
+import { ShppingIcon, StarIcon } from '../app/images/icon';
 import { Product } from '@/app/page';
 import Image from 'next/image'
 import { useRouter } from 'next/navigation';
