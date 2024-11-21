@@ -4,11 +4,11 @@ import { useEffect, useState } from 'react';
 import { Product } from '../page';
 import axios from 'axios';
 import Image from 'next/image';
-import { StarIcon } from '../images/icon';
+import StarIcon from '../images/star.png'
 
 const SinglePage = () => {
   const { slug } = useParams();
-  const [product, setProduct] = useState<Product>();
+  const [product, setProduct] = useState<Product | null>(null);
   const router = useRouter();
 
 
@@ -38,7 +38,9 @@ const SinglePage = () => {
             <p className='text-[18px] font-bold mt-3'>the remainder: <strong className="text-[#FFC831]">${product.rating.count}</strong></p>
             <div className='flex items-center space-x-4 mt-2'>
               <p className="text-[18px] font-bold">Price: <strong className="text-[#FFC831]">${product.price}</strong></p>
-              <p className="text-[18px] font-bold flex items-center space-x-2"><StarIcon /> {product.rating.rate}</p>
+              <p className="text-[18px] font-bold flex items-center space-x-2">
+                <Image src={StarIcon} alt='star icon' width={18} height={18} /> {product.rating.rate}
+              </p>
               <button className="bg-[#FFC831] rounded-lg hover:opacity-70 duration-300 text-white text-[18px] px-4 p-2">Buy</button>
             </div>
           </div>

@@ -1,6 +1,7 @@
 "use client";
 
-import { ShppingIcon, StarIcon } from '../app/images/icon';
+import ShppingIcon from '../app/images/shopping.svg';
+import StarIcon  from '../app/images/star.png';
 import { Product } from '@/app/page';
 import Image from 'next/image'
 import { useRouter } from 'next/navigation';
@@ -15,9 +16,9 @@ const ProductItem:React.FC<{product:Product}> = ({product}) => {
             <div className="p-4 mb-4">
                 <h3 className="text-[18px] mb-1 line-clamp-1">{product.title}</h3>
                 <p className="text-[16px]">Price: <strong className="text-[#FFC831]">${product.price}</strong></p>
-                <p className="text-[16px] flex items-center space-x-2"><StarIcon /> {product.rating.rate}</p>
+                <p className="text-[16px] flex items-center space-x-2"><Image src={StarIcon} alt='star icon' width={18} height={18} />  {product.rating.rate}</p>
             </div>
-            <button className="absolute bottom-1 right-1 w-[40px] h-[40px] rounded-full bg-white hover:opacity-70 duration-300 flex items-center justify-center"><ShppingIcon /> </button>
+            <button className="absolute bottom-1 right-1 w-[40px] h-[40px] rounded-full bg-white hover:opacity-70 duration-300 flex items-center justify-center"><Image src={ShppingIcon} alt='shopping icon' width={20} height={20} /></button>
         </li>
     )
 }
