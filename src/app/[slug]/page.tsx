@@ -27,10 +27,10 @@ const SinglePage = () => {
 
   return (
     <div className='w-[1280px] mx-auto'>
-      <button onClick={() => router.push('/')} className='px-6 py-2 block mb-3 rounded-lg text-[18px] bg-[#E7F0F2]'>Go Back</button>
+      <button onClick={() => router.push('/')} className='px-6 dark:text-[#F3F5F7] dark:bg-[#1F1E24] py-2 block mb-3 rounded-lg text-[18px] bg-[#E7F0F2]'>Go Back</button>
       {product ?
-        <div className='flex items-center space-x-10'>
-          <Image className='w-[600px] h-[460px] object-contain' src={product.image} alt='product img' width={467} height={314} />
+        <div className='flex items-center space-x-10 dark:text-[#F3F5F7]'>
+          <Image className='w-[600px] h-[460px] object-contain rounded-[30px]' src={product.image} alt='product img' width={467} height={314} />
           <div className='w-[500px]'>
             <h2 className='font-bold text-[24px] mb-3'>{product.title}</h2>
             <p className='text-[18px] mb-2'>Category: {product.category}</p>
